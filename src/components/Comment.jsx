@@ -1,7 +1,7 @@
 import { ThumbsUp, Trash } from "@phosphor-icons/react";
 import styles from "./Comment.module.css";
 
-export function Comment() {
+export function Comment({comment}) {
   return (
     <div className={styles.comment}>
       <img src="http://github.com/joao-ressel.png" />
