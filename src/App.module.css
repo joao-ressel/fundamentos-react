@@ -10,3 +10,17 @@
     padding: 0 1rem;
 
 }
+
+@media (max-width:768px) {
+    html{
+       font-size: 87.5%; 
+       /* para deixar tudo um pouco menor:
+       se 16 é 100% - e quero 14 - regra de 3:
+       16 -> 100%
+       14 -> x
+       */
+    }
+    .wrapper{
+        grid-template-columns: 1fr;
+    }
+}
