@@ -1,3 +1,4 @@
+import { Avatar } from "./Avatar";
 import styles from "./Sidebar.module.css";
 import { PencilLine } from "@phosphor-icons/react";
 export function Sidebar() {
@@ -5,20 +6,17 @@ export function Sidebar() {
     <aside className={styles.sidebar}>
       <img
         className={styles.cover}
-        src="https://images.unsplash.com/photo-1575089976121-8ed7b2a54265?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://media.licdn.com/dms/image/D4D16AQHH8fH9ZiRc2w/profile-displaybackgroundimage-shrink_350_1400/0/1676077988054?e=1721865600&v=beta&t=oBQJ23219M3sAti-AS1i_dCDm-jud1FQ4CIkxpocG5A"
       />
       <div className={styles.profile}>
-        <img
-          className={styles.avatar}
-          src="https://github.com/joao-ressel.png"
-        />
+        <Avatar hasBorder src="https://github.com/joao-ressel.png" />
         <strong>João Carlos</strong>
         <span>Web Developer</span>
       </div>
 
       <footer>
         <a href="#">
-          <PencilLine size={20}/>
+          <PencilLine size={20} />
           Editar seu perfil
         </a>
       </footer>

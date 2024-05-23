@@ -17,19 +17,7 @@
 
     margin-top: calc(0px - 1.5rem - 6px);
 }
-
-.avatar{
-    /* box-sizing: initial;*/ /*ao adicionar bordas/margin/padding em um elemento, faça ocupar um espaço a mais, sem "espremer" */
  
-     width: calc(3rem + 12px);
-     height: calc(3rem + 12px);
- 
-     border-radius: 8px; /* não precisa ficar mais ou menos arredondada porque o usuario mudou alguma configuração de tamanhos */
-     border: 4px solid var(--gray-800);
-     outline: 2px solid var(--green-500);
- }
- 
-
 .profile strong{
     margin-top: 1rem;
     color: var(--gray-100);
