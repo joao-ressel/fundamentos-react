@@ -8,12 +8,13 @@
   --gray-800: #202024;
   --gray-900: #121214;
 
-  --green-300: #00B37E;
+  --green-300: #00b37e;
   --green-500: #00875f;
 
+  --red-500: #f75a68;
 }
 
-:focus{
+:focus {
   outline: 1px solid var(--green-500);
 }
 
@@ -29,10 +30,12 @@ body {
   -webkit-font-smoothing: antialiased; /*aplica padronização pras fonts ficarem mais "detalhadas" */
 }
 
-body, input, textarea, button{ /* por padrão os elementos nao recebem a costumização de font do body */
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 1rem; /* 1 unidade relativa = 16px -  para aumentar a acessibilidade para aumentar o tamanho da font no dispositivo do usuario */
+body,
+input,
+textarea,
+button {
+  /* por padrão os elementos nao recebem a costumização de font do body */
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 1 unidade relativa = 16px -  para aumentar a acessibilidade para aumentar o tamanho da font no dispositivo do usuario */
 }
-
-
