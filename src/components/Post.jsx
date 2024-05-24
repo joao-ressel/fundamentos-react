@@ -43,6 +43,13 @@ export function Post({ author, content, publishedAt }) {
     setNewCommentText(event.target.value);
   }
 
+  function onDeleteComment(commentToDelete) {
+    const commentWithoutDeleteOne = comments.filter((comment) => {
+      return comment !== commentToDelete;
+    });
+    setComments(commentWithoutDeleteOne);
+  }
+
   return (
     <article className={styles.post}>
       <header>
@@ -90,7 +97,13 @@ export function Post({ author, content, publishedAt }) {
       </form>
       <div className={styles.commentList}>
         {comments.map((comment) => {
-          return <Comment key={comment} content={comment} />;
+          return (
+            <Comment
+              key={comment}
+              content={comment}
+              onDeleteComment={onDeleteComment}
+            />
+          );
         })}
       </div>
     </article>
