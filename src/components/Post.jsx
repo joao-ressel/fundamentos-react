@@ -8,14 +8,14 @@ import { useState } from "react";
 
 export function Post({ author, content, publishedAt }) {
   const [comments, setComments] = useState(["Primeiro comentário"]);
+  const [newCommentText, setNewCommentText] = useState(" ");
+
   // const publishedDateFormatted = new Intl.DateTimeFormat('pt-BR',{
   //   day:'2-digit',
   //   month: 'long',
   //   hour:'2-digit',
   //   minute:'2-digit',
   // }).format(publishedAt);
-
-  const [newCommentText, setNewCommentText] = useState(" ");
 
   const publishedDateFormatted = format(
     publishedAt,
@@ -40,6 +40,7 @@ export function Post({ author, content, publishedAt }) {
   }
 
   function handleNewCommentChange(event) {
+    event.target.setCustomValidity("");
     setNewCommentText(event.target.value);
   }
 
@@ -49,6 +50,12 @@ export function Post({ author, content, publishedAt }) {
     });
     setComments(commentWithoutDeleteOne);
   }
+
+  function handleNewCommentInvalid(event) {
+    event.target.setCustomValidity("Esse campo é obrigatório!");
+  }
+
+  const isNewCommentEmpty = newCommentText.length === 0;
 
   return (
     <article className={styles.post}>
@@ -90,9 +97,13 @@ export function Post({ author, content, publishedAt }) {
           onChange={handleNewCommentChange}
           name="comment"
           placeholder="Deixe um comentário"
+          onInvalid={handleNewCommentInvalid}
+          required
         />
         <footer>
-          <button type="submit">Publicar</button>
+          <button type="submit" disabled={isNewCommentEmpty}>
+            Publicar
+          </button>
         </footer>
       </form>
       <div className={styles.commentList}>
